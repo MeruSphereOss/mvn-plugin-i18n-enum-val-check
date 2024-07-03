@@ -1,4 +1,4 @@
-package oss.merusphere.mvnplugin;
+package com.merusphere.devops.mvnplugin;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -19,9 +19,9 @@ import org.apache.maven.project.MavenProject;
 import org.reflections.Reflections;
 
 /**
- * Checks that whether Enum Field Types in model classes contain Enumerated
- * Annotation or not and also checks that for enum fields containing enumerated
- * annotation, whether enumerated annotation contains Enum String Value or not
+ * Checks that whether the enum values/constants have corresponding entries
+ * in the messages.properties file or not.
+ * The format of the enum values in the messages.properties file is ClassName.ENUMVALUE = user friendly strings.
  */
 @Mojo(name = "i18n-enum-val-check", defaultPhase = LifecyclePhase.COMPILE, requiresDependencyResolution = ResolutionScope.TEST)
 public class EnumValuesMsgProrpertyCheckerMojo extends AbstractMojo {
@@ -47,7 +47,7 @@ public class EnumValuesMsgProrpertyCheckerMojo extends AbstractMojo {
 	MavenProject project;
 
 	/**
-	 * Checks the number of methods not having Security Annotations
+	 * Checks the number of enum constants hasn't corresponding entries in the messages.properties file
 	 */
 	public void execute() throws MojoExecutionException, MojoFailureException {
 		try {
@@ -92,14 +92,14 @@ public class EnumValuesMsgProrpertyCheckerMojo extends AbstractMojo {
 			}
 			
 			if (enumValAbsenceList != null && !enumValAbsenceList.isEmpty()) {
-				getLog().error("The following enum message codes does not exists in message properties");
+				getLog().error("The following enum message values does not exists in message properties");
 				for (String error : enumValAbsenceList) {
 					getLog().error(error);
 				}
 			}
 			
 			if (!enumValAbsenceList.isEmpty() || !enumValAbsenceList.isEmpty()) {
-				new MojoExecutionException("Found Enum Message Code Errors");
+				new MojoExecutionException("Found Enum Message values Errors");
 			}
 			
 		} catch (Exception e) {

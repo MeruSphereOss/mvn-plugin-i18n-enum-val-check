@@ -1,4 +1,4 @@
-package oss.merusphere.mvnplugin;
+package com.merusphere.devops.mvnplugin;
 
 import static org.junit.Assert.assertTrue;
 
