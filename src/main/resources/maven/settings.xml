@@ -6,8 +6,8 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<gpg.keyname>839C4A82B068E031570C5452559FE948461241F8</gpg.keyname>
-				<gpg.passphrase>merusphere-OSS</gpg.passphrase>
+				<gpg.keyname>AA11076961ACC367FB8F1BDB1BC2F43DE7F66EEC</gpg.keyname>
+				<gpg.passphrase>gpg@Rsa1</gpg.passphrase>
 			</properties>
 		</profile>
 	</profiles>
@@ -15,8 +15,18 @@
 	<servers>
 		<server>
 			<id>ossrh</id>
-			<username>devops-merusphere</username>
-			<password>1_Qossrepo4plugin</password>
+			<username>BWzZ310x</username>
+			<password>cOy5LfOiCMg66+PnNoUtwaOXr3lPVBHkK2wANZUS1O7F</password>
 		</server>
 	</servers>
+	
+	<mirrors>
+		<mirror>
+			<id>insecure-repo-paytm</id>
+			<mirrorOf>external:http:*</mirrorOf>
+			<url>http://artifactorypg.paytm.in/artifactory/libs-release</url>
+			<blocked>false</blocked>
+		</mirror>
+	</mirrors>
+		
 </settings>
