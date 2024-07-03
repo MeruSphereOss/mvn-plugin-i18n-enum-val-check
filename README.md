@@ -1,4 +1,4 @@
-# Maven Plugin :: i18n-enum-val-check
+i18n-enum-val-check# Maven Plugin :: i18n-enum-val-check
 This Plugin will Checks that whether the enum values/constants have corresponding entries in the messages.properties file or not.
 
 ## Problem Statement
@@ -15,17 +15,18 @@ To use this, Include the below in your project plugins section of pom.xml
 			<plugin>
 				<groupId>com.merusphere.devops</groupId>
 				<artifactId>mvnplugin.i18n-enum-val-check</artifactId>
-				<version>0.9.1</version>
+				<version>0.9.2</version>
 				<executions>
 					<execution>
-						<id>compile</id>
+						<phase>compile</phase>
 						<goals>
-							<goal>compile</goal>
+							<goal>i18n-enum-val-check</goal>
 						</goals>
 					</execution>
 				</executions>
 				<configuration>
-					<pkg>com.your.project</pkg>
+					<pkg>your project base package</pkg>
+					<msgPropertiesPath> your messages.properties file path</msgPropertiesPath>
 				</configuration>
 			</plugin>
 ```
@@ -43,6 +44,16 @@ To use this, Include the below in your project plugins section of pom.xml
 		* Description : Name of the messages.properties file
 		* Example : messages.properties
 
+## How to run this plugin in your projects
+
+Note : This PlugIn runs as part of the Maven Phase: compile
+If you want to fire it, use the Goal : i18n-enum-val-check
+
+```
+mvn clean compile
+or
+mvn clean install
+```
 
 # How to develop this Plugin based on your requirements
 
