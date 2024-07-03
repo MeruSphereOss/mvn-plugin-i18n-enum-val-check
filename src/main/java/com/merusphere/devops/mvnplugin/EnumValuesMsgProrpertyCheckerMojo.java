@@ -23,7 +23,7 @@ import org.reflections.Reflections;
  * in the messages.properties file or not.
  * The format of the enum values in the messages.properties file is ClassName.ENUMVALUE = user friendly strings.
  */
-@Mojo(name = "i18n-enum-val-check", defaultPhase = LifecyclePhase.COMPILE, requiresDependencyResolution = ResolutionScope.TEST)
+@Mojo(name = "i18n-enum-val-check", defaultPhase = LifecyclePhase.COMPILE, requiresDependencyResolution = ResolutionScope.COMPILE)
 public class EnumValuesMsgProrpertyCheckerMojo extends AbstractMojo {
 	public static Set<String> msgPropertyCodeSet = new HashSet<>();
 

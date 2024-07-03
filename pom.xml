@@ -7,7 +7,7 @@
 
 	<groupId>com.merusphere.devops</groupId>
 	<artifactId>mvnplugin.i18n-enum-val-check</artifactId>
-	<version>0.9.1</version>
+	<version>0.9.2</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>Validate Enum values has Corresponding entries in messages.properties file or not</name>
@@ -181,7 +181,7 @@
 				<configuration>
 					<publishingServerId>ossrh</publishingServerId>
 					<autoPublish>true</autoPublish>
-					<deploymentName>mvnplugin.i18n-enum-val-check-0.9.1</deploymentName>
+					<deploymentName>mvnplugin.i18n-enum-val-check-0.9.2</deploymentName>
 				</configuration>
 			</plugin>
 		</plugins>
